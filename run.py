@@ -3,7 +3,6 @@ from custom_metrics import metric_degrees_difference
 from keras.utils import HDF5Matrix
 from random_search import random_search
 from kfold import test_model
-import numpy as np
 import h5py
 
 h5file = 'processed_data_501.h5'
