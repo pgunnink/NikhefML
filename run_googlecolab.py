@@ -4,6 +4,8 @@ from keras.utils import HDF5Matrix
 from random_search import random_search
 from kfold import test_model
 import h5py
+from google.colab import files
+
 
 h5file = 'processed_data_501.h5'
 
@@ -45,6 +47,6 @@ while True:
         for key in result:
             f.create_dataset(key, data=result[key])
         print('Finished iteration %s' % i)
-        i += 1
-        if i==2:
-            break
+
+    files.download('result_%s.h5' % i)
+    i += 1
