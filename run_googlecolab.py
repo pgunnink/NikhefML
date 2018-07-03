@@ -5,9 +5,12 @@ from random_search import random_search
 from kfold import test_model
 import h5py
 from google.colab import files
+import urllib.request
 
 
 h5file = 'processed_data_501.h5'
+url = 'http://nikhef.nl/~pgunnink/Keras_train/test_data.h5'
+response = urllib.request.urlretrieve(url, h5file)
 
 traces_train = HDF5Matrix(h5file, 'traces')
 labels_train = HDF5Matrix(h5file, 'labels')
